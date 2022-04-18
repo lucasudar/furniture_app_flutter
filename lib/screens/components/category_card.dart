@@ -6,7 +6,8 @@ import '../../size_config.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    Key? key, required this.category,
+    Key? key,
+    required this.category,
   }) : super(key: key);
 
   final Category category;
@@ -38,8 +39,7 @@ class CategoryCard extends StatelessWidget {
                           Text('${category.numOfProducts} + Products',
                               style: TextStyle(
                                 color: kTextColor.withOpacity(0.6),
-                              )
-                          )
+                              ))
                         ],
                       ),
                     )),

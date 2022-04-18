@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/Categories.dart';
 
-Future<List<Category>> fetchProducts() async {
-  const String apiUrl = "https://5f210aa9daa42f001666535e.mockapi.io/api/products";
+Future<List<Category>> fetchCategories() async {
+  const String apiUrl = "https://5f210aa9daa42f001666535e.mockapi.io/api/categories";
   final response = await http.get(Uri.parse(apiUrl));
 
   if (response.statusCode == 200) {

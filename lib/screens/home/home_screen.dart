@@ -11,9 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-      appBar: buildAppBar(),
-      body: Body());
+    return Scaffold(appBar: buildAppBar(), body: const Body());
   }
 
   AppBar buildAppBar() {

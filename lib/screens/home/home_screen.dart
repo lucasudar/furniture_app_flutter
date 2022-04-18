@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:furniture_app_flutter/constants.dart';
 import 'package:furniture_app_flutter/size_config.dart';
+
+import '../components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,12 +12,28 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        appBar: AppBar(
+      appBar: buildAppBar(),
+      body: Body());
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
       leading: IconButton(
         icon: SvgPicture.asset('assets/icons/menu.svg',
             height: SizeConfig.defaultSize! * 2),
         onPressed: () {},
       ),
-    ));
+      actions: <Widget>[
+        IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('assets/icons/scan.svg',
+                height: SizeConfig.defaultSize! * 2.4)),
+        const Center(
+          child: Text('Scan',
+              style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold)),
+        ),
+        SizedBox(width: SizeConfig.defaultSize),
+      ],
+    );
   }
 }

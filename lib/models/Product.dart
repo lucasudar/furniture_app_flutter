@@ -25,13 +25,13 @@ class Product {
 }
 
 Product product = Product(
-  price: 1000,
+  price: 1600,
   id: '1',
-  title: 'Product 1',
-  category: 'Category 1',
+  title: 'Wood Frame',
+  category: 'Chair',
   description: description,
-  subTitle: 'Sub Title 1',
-  image: 'assets/images/img_1.png',
+  subTitle: 'Tieton Armchair',
+  image: 'http://i.imgur.com/sI4GvE6.png',
 );
 
 String description =

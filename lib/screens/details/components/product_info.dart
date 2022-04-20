@@ -20,54 +20,55 @@ class ProductInfo extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: defaultSize * 2),
       height: defaultSize * 37.5,
-      width: defaultSize * 15,
-      // color: Colors.amber,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            product.category.toUpperCase(),
-            style: lightText,
-          ),
-          SizedBox(
-            height: defaultSize,
-          ),
-          Text(
-            product.title,
-            style: TextStyle(
-                fontSize: defaultSize * 2.4,
-                fontWeight: FontWeight.bold,
-                letterSpacing: -0.8,
-                height: 1.4),
-          ),
-          SizedBox(
-            height: defaultSize * 2,
-          ),
-          Text(
-            'From',
-            style: lightText,
-          ),
-          Text(
-            '\$${product.price}',
-            style: TextStyle(
-                fontSize: defaultSize * 1.6,
-                fontWeight: FontWeight.bold,
-                height: 1.6),
-          ),
-          SizedBox(
-            height: defaultSize * 2,
-          ),
-          Text('Available Colors', style: lightText),
-          Row(
-            children: [
-              buildColor(defaultSize,
-                  color: const Color(0xFF7BA275), isActive: true),
-              buildColor(defaultSize, color: const Color(0xFFD7D7D7)),
-              buildColor(defaultSize, color: kTextColor),
-            ],
-          )
-        ],
+      width: defaultSize * (SizeConfig.orientation == Orientation.landscape ? 35 : 15),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              product.category.toUpperCase(),
+              style: lightText,
+            ),
+            SizedBox(
+              height: defaultSize,
+            ),
+            Text(
+              product.title,
+              style: TextStyle(
+                  fontSize: defaultSize * 2.4,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: -0.8,
+                  height: 1.4),
+            ),
+            SizedBox(
+              height: defaultSize * 2,
+            ),
+            Text(
+              'From',
+              style: lightText,
+            ),
+            Text(
+              '\$${product.price}',
+              style: TextStyle(
+                  fontSize: defaultSize * 1.6,
+                  fontWeight: FontWeight.bold,
+                  height: 1.6),
+            ),
+            SizedBox(
+              height: defaultSize * 2,
+            ),
+            Text('Available Colors', style: lightText),
+            Row(
+              children: [
+                buildColor(defaultSize,
+                    color: const Color(0xFF7BA275), isActive: true),
+                buildColor(defaultSize, color: const Color(0xFFD7D7D7)),
+                buildColor(defaultSize, color: kTextColor),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
